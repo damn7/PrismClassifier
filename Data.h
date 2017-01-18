@@ -10,6 +10,7 @@
 
 typedef struct Data
 {
+    int attributeSize;
     struct Instance *instance;
     struct AttributeValueSet *attributeValueSet;
     struct Classification *classification;
@@ -17,5 +18,7 @@ typedef struct Data
 
 Data_t *dataConstruct();
 Data_t *getData(char *fileName);
+void setAttributeSize(Data_t *data);
+Data_t *makeCopy(Data_t *data);
 void printData(Data_t *data);
 #endif // DATA_H_INCLUDED

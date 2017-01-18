@@ -1,0 +1,175 @@
+# depslib dependency file v1.0
+1480423440 source:/home/sakar/Documents/projects/PrismClassifier/Attribute.c
+	"Attribute.h"
+
+1480422803 /home/sakar/Documents/projects/PrismClassifier/Attribute.h
+	<stdio.h>
+	<stdlib.h>
+	"Instance.h"
+	"Value.h"
+
+1480362020 /home/sakar/Documents/projects/PrismClassifier/Value.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1480419437 /home/sakar/Documents/projects/PrismClassifier/AttributeValueSet.h
+	"Value.h"
+
+1480444933 source:/home/sakar/Documents/projects/PrismClassifier/AttributeValueSet.c
+	"AttributeValueSet.h"
+
+1480419437 source:/home/sakar/Documents/projects/PrismClassifier/AttributeValueSet.h
+	"Value.h"
+
+1480445032 source:/home/sakar/Documents/projects/PrismClassifier/Classification.c
+	"Classification.h"
+
+1480341839 /home/sakar/Documents/projects/PrismClassifier/Classification.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1480444957 source:/home/sakar/Documents/projects/PrismClassifier/Data.c
+	"Data.h"
+
+1480442660 /home/sakar/Documents/projects/PrismClassifier/Data.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Instance.h"
+	"AttributeValueSet.h"
+	"Classification.h"
+
+1480417823 /home/sakar/Documents/projects/PrismClassifier/Instance.h
+	"Attribute.h"
+	"Classification.h"
+
+1480444906 source:/home/sakar/Documents/projects/PrismClassifier/Instance.c
+	"Instance.h"
+
+1480445730 source:/home/sakar/Documents/projects/PrismClassifier/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Data.h"
+	"Prism.h"
+
+1480362592 source:/home/sakar/Documents/projects/PrismClassifier/Value.c
+	"Value.h"
+
+1480420508 /home/sakar/Documents/projects/PrismClassifier/Prism.h
+	<stdio.h>
+	<stdlib.h>
+	"Data.h"
+	"PrismRule.h"
+
+1480421034 /home/sakar/Documents/projects/PrismClassifier/PrismRule.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Data.h"
+	"Classification.h"
+	"RuleTest.h"
+
+1480422753 /home/sakar/Documents/projects/PrismClassifier/RuleTest.h
+	"Value.h"
+	"PrismRule.h"
+	"Instance.h"
+
+1480417658 source:/home/sakar/Documents/projects/PrismClassifier/Prism.c
+	"Prism.h"
+
+1480444922 source:/home/sakar/Documents/projects/PrismClassifier/PrismRule.c
+	"PrismRule.h"
+
+1480422987 source:/home/sakar/Documents/projects/PrismClassifier/RuleTest.c
+	"RuleTest.h"
+
+1480423440 source:/home/sakar/projects/PrismClassifier/Attribute.c
+	"Attribute.h"
+
+1480422803 /home/sakar/projects/PrismClassifier/Attribute.h
+	<stdio.h>
+	<stdlib.h>
+	"Instance.h"
+	"Value.h"
+
+1480417823 /home/sakar/projects/PrismClassifier/Instance.h
+	"Attribute.h"
+	"Classification.h"
+
+1480341839 /home/sakar/projects/PrismClassifier/Classification.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1480362020 /home/sakar/projects/PrismClassifier/Value.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1480444933 source:/home/sakar/projects/PrismClassifier/AttributeValueSet.c
+	"AttributeValueSet.h"
+
+1480419437 /home/sakar/projects/PrismClassifier/AttributeValueSet.h
+	"Value.h"
+
+1480419437 source:/home/sakar/projects/PrismClassifier/AttributeValueSet.h
+	"Value.h"
+
+1480445032 source:/home/sakar/projects/PrismClassifier/Classification.c
+	"Classification.h"
+
+1480445948 source:/home/sakar/projects/PrismClassifier/Data.c
+	"Data.h"
+
+1480442660 /home/sakar/projects/PrismClassifier/Data.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Instance.h"
+	"AttributeValueSet.h"
+	"Classification.h"
+
+1480444906 source:/home/sakar/projects/PrismClassifier/Instance.c
+	"Instance.h"
+
+1480444922 source:/home/sakar/projects/PrismClassifier/PrismRule.c
+	"PrismRule.h"
+
+1480421034 /home/sakar/projects/PrismClassifier/PrismRule.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Data.h"
+	"Classification.h"
+	"RuleTest.h"
+
+1480422753 /home/sakar/projects/PrismClassifier/RuleTest.h
+	"Value.h"
+	"PrismRule.h"
+	"Instance.h"
+
+1480422987 source:/home/sakar/projects/PrismClassifier/RuleTest.c
+	"RuleTest.h"
+
+1480362592 source:/home/sakar/projects/PrismClassifier/Value.c
+	"Value.h"
+
+1484760805 source:/home/sakar/projects/PrismClassifier/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Data.h"
+	"Prism.h"
+
+1480420508 /home/sakar/projects/PrismClassifier/Prism.h
+	<stdio.h>
+	<stdlib.h>
+	"Data.h"
+	"PrismRule.h"
+
+1480417658 source:/home/sakar/projects/PrismClassifier/Prism.c
+	"Prism.h"
+

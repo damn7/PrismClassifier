@@ -27,13 +27,16 @@ Instance_t *addInstance(Instance_t **startInstance, Instance_t *lastInstance, At
 
 void printInstance(Instance_t *startInstance)
 {
+    printf("INSTANCES\n\n");
     Instance_t *currentInstance = startInstance;
+    int instanceIndex = 0;
     while(currentInstance != NULL)
     {
+        printf("Instance %d:  ",instanceIndex);
         printAttribute(currentInstance->attribute);
         printf("%s\n", currentInstance->classification->classificationName);
-        printf("%d\n", currentInstance->classification->classificationIndex);
         currentInstance = currentInstance->next;
+        instanceIndex++;
     }
     printf("\n");
 }

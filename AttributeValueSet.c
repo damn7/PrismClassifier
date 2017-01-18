@@ -37,12 +37,35 @@ AttributeValueSet_t *getAttributeValueSet(AttributeValueSet_t **startAttributeVa
     return prevAttributeValueSet->next;
 }
 
-void printAttributeValueSet(AttributeValueSet_t *startAttributeValueSet)
+void setValueSize(AttributeValueSet_t *startAttributeValueSet)
 {
     AttributeValueSet_t *currentAttributeValueSet = startAttributeValueSet;
     while(currentAttributeValueSet != NULL)
     {
-        printf("%d   ", currentAttributeValueSet->attributeIndex);
+        currentAttributeValueSet->valueSize = getValueSize(currentAttributeValueSet->value);
+        currentAttributeValueSet = currentAttributeValueSet->next;
+    }
+}
+
+int getAttributeSize(AttributeValueSet_t *startAttributeValueSet)
+{
+    AttributeValueSet_t *currentAttributeValueSet = startAttributeValueSet;
+    int attributeSize = 0;
+    while(currentAttributeValueSet != NULL)
+    {
+        attributeSize++;
+        currentAttributeValueSet = currentAttributeValueSet->next;
+    }
+    return attributeSize;
+}
+
+void printAttributeValueSet(AttributeValueSet_t *startAttributeValueSet)
+{
+    printf("ATTRIBUTE VALUE SET\n\n");
+    AttributeValueSet_t *currentAttributeValueSet = startAttributeValueSet;
+    while(currentAttributeValueSet != NULL)
+    {
+        printf("Attribute %d:  ", currentAttributeValueSet->attributeIndex);
         printValue(currentAttributeValueSet->value);
         currentAttributeValueSet = currentAttributeValueSet->next;
     }

@@ -36,6 +36,18 @@ Value_t *getValue(Value_t **startValue, char *valueName)
     return prevValue->next;
 }
 
+int getValueSize(Value_t *startValue)
+{
+    int valueSize = 0;
+    Value_t *currentValue = startValue;
+    while(currentValue != NULL)
+    {
+        valueSize++;
+        currentValue = currentValue->next;
+    }
+    return valueSize;
+}
+
 void printValue(Value_t *startValue)
 {
     Value_t *currentValue = startValue;

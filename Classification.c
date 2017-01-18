@@ -38,12 +38,13 @@ Classification_t *getClassification(Classification_t **startClassification, char
 
 void printClassification(Classification_t *startClassification)
 {
+    printf("CLASSIFICATION\n\n");
     Classification_t *currentClassification = startClassification;
     while(currentClassification != NULL)
     {
         printf("%s   ", currentClassification->classificationName);
         currentClassification = currentClassification->next;
     }
-    printf("\n");
+    printf("\n\n");
 }
 

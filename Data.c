@@ -9,6 +9,7 @@ Data_t *dataConstruct()
         printf("Not enough memory");
         exit(0);
     }
+    newData->attributeSize = 0;
     newData->instance = NULL;
     newData->attributeValueSet = NULL;
     newData->classification = NULL;
@@ -33,7 +34,7 @@ Data_t *getData(char *fileName)
     int lineIndex=0;
     while (fgets (line, MAX_CHARS, file) != NULL) /* read a line */
     {
-        printf("%s", line);
+        //printf("%s", line);
         AttributeValueSet_t *attributeValueSet = NULL;
         Value_t *value = NULL;
         Attribute_t *startAttribute = NULL; Attribute_t *attribute = NULL;
@@ -92,14 +93,37 @@ Data_t *getData(char *fileName)
     //free(instance);
     //prevInstance->next = NULL;
     //free(instance);
+    setAttributeSize(data);
+    setValueSize(data->attributeValueSet);
     fclose(file);
     return data;
+}
+
+void setAttributeSize(Data_t *data)
+{
+    data->attributeSize = getAttributeSize(data->attributeValueSet);
+}
+
+Data_t *makeCopy(Data_t *data)
+{
+    Data_t *copyData = dataConstruct();
+    copyData->attributeSize = data->attributeSize;
+    copyData->attributeValueSet = data->attributeValueSet;
+    copyData->classification = data->classification;
+    Instance_t *instance = NULL;
+    Instance_t *currentInstance = data->instance;
+    while(currentInstance != NULL)
+    {
+        instance = addInstance(&(copyData->instance), instance, currentInstance->attribute, currentInstance->classification);
+        currentInstance = currentInstance->next;
+    }
+    return copyData;
 }
 
 void printData(Data_t *data)
 {
     printAttributeValueSet(data->attributeValueSet);
-    printInstance(data->instance);
     printClassification(data->classification);
+    //printInstance(data->instance);
 }
 

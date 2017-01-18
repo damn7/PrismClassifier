@@ -3,10 +3,14 @@
 #include <string.h>
 
 #include "Data.h"
+#include "Prism.h"
 
 int main()
 {
-    Data_t *data = getData("/home/sakar/Downloads/UCI/iris/temp.data");
+    Data_t *data = getData("datasets/contact-lenses.data");
     printData(data);
+
+    Prism_t *prism = buildClassifier(data);
+    printPrismRules(prism->rules);
     return 0;
 }

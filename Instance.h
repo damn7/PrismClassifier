@@ -12,6 +12,6 @@ typedef struct Instance
 }Instance_t;
 
 Instance_t *InstanceConstruct();
-Instance_t *addInstance(Instance_t **startInstance, Instance_t *lastInstance, Attribute_t *attribute, Classification_t *classification);
+Instance_t *addInstance(Instance_t **startInstance, Instance_t *lastInstance, struct Attribute *attribute, Classification_t *classification);
 void printInstance(Instance_t *startInstance);
 #endif // INSTANCE_H_INCLUDED

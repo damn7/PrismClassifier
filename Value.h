@@ -14,5 +14,6 @@ typedef struct Value
 
 Value_t *ValueConstruct(int valueIndex, char *valueName);
 Value_t *getValue(Value_t **startValue, char *valueName);
+int getValueSize(Value_t *startValue);
 void printValue(Value_t *startValue);
 #endif // VALUE_H_INCLUDED

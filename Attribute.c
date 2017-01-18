@@ -26,6 +26,14 @@ Attribute_t *addAttribute(Attribute_t **startAttribute, Attribute_t *lastAttribu
     return lastAttribute->next;
 }
 
+Attribute_t *getAttribute(struct Instance *instance, int attributeIndex)
+{
+    Attribute_t *currentAttribute = instance->attribute;
+    while(currentAttribute != NULL && currentAttribute->attributeIndex != attributeIndex)
+        currentAttribute = currentAttribute->next;
+    return currentAttribute;
+}
+
 void printAttribute(Attribute_t *startAttribute)
 {
     Attribute_t *currentAttribute = startAttribute;

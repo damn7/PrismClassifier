@@ -3,6 +3,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include "Instance.h"
 #include "Value.h"
 
 typedef struct Attribute
@@ -14,5 +15,6 @@ typedef struct Attribute
 
 Attribute_t *attributeConstruct(int attributeIndex, Value_t *value);
 Attribute_t *addAttribute(Attribute_t **startAttribute, Attribute_t *lastAttribute, Value_t *value);
+Attribute_t *getAttribute(struct Instance *instance, int attributeIndex);
 void printAttribute(Attribute_t *startAttribute);
 #endif // ATTRIBUTE_H_INCLUDED

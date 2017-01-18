@@ -13,7 +13,8 @@ typedef struct AttributeValueSet
 
 AttributeValueSet_t *AttributeValueSetConstruct(int attributeIndex);
 AttributeValueSet_t *getAttributeValueSet(AttributeValueSet_t **startAttributeValueSet, int attributeIndex);
+void setValueSize(AttributeValueSet_t *startAttributeValueSet);
+int getAttributeSize(AttributeValueSet_t *startAttributeValueSet);
 void printAttributeValueSet(AttributeValueSet_t *startAttributeValueset);
-
 
 #endif // ATTRIBUTESET_H_INCLUDED
