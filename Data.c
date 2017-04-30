@@ -1,4 +1,5 @@
 #include "Data.h"
+#include "Constants.h"
 #define MAX_CHARS 120
 
 Data_t *dataConstruct()
@@ -21,7 +22,8 @@ Data_t *getData(char *fileName)
     FILE *file = fopen(fileName, "r");
     if (file == NULL)
     {
-        printf("File not Found\n");
+	perror("Error");
+        printf("Data => File not Found %s\n", fileName);
         exit(EXIT_FAILURE);
     }
 

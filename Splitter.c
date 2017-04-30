@@ -3,20 +3,24 @@
 #include <string.h>
 
 #include "Constants.h"
-void split(char *fileName, int instances, int percentage, int classes, int attributes)
+void split(char *fileName, int instances, int percentage, int classes, int attributes, int id, int nthread)
 {
 
-	char temp[1000], substr[1000]; // fix this value of 1000 appropriately if your file has very large lines
-	char headerText[5000];  // fix this number 5000 appropriately if too many attributes
-    char datasetName[100];
+    char temp[1000], substr[1000]; // fix this value of 1000 appropriately if your file has very large lines
+    char headerText[5000];  // fix this number 5000 appropriately if too many attributes
 
     //get the dataset name for proper naming of the files created.
+    /*
     char *start = strrchr(fileName, '/') + 1;
     char *end = strchr(fileName, '.');
     int datasetNameLength = (int)(end - start);
     memcpy(datasetName, start, datasetNameLength);
     datasetName[datasetNameLength] = '\0';
-    printf("%s\n", datasetName);
+    printf("%s\n", datasetName);*/
+
+	//C string of the processor ID.
+	char ID[100];
+	sprintf(ID, "%d", id);
 
 	int* count;
 	int* trainingIndices;
@@ -43,13 +47,16 @@ void split(char *fileName, int instances, int percentage, int classes, int attri
 		printf(USAGE);
         exit(-1);
 	}
-
-	dataFile = fopen(fileName, "r");
+	
+	char datasetPath[100];
+	strcat(strcat(strcat(datasetPath, DATASETPATH), fileName), ".data");
+	//printf("%s\n",datasetPath);
+	dataFile = fopen(datasetPath, "r");
 
 	// file existence check
 	if(dataFile == NULL)
 	{
-		printf("Could not read the file %s", fileName);
+		printf("Could not read the file %s", datasetPath);
 		exit(-1);
 	}
 
@@ -130,25 +137,25 @@ void split(char *fileName, int instances, int percentage, int classes, int attri
 	}
 	strcat(headerText,"\n\n@DATA\n");
 
-	printf("Header over\n");
+	//printf("Header over\n");
 
 	// now read all classified files - shuffle them and then put the data in appropriate training and test files
-	char trainingDataPath[100];
-	strcat(strcat(strcat(trainingDataPath, TRAINSETPATH), datasetName), ".data");
-	printf("%s\n", trainingDataPath);
-	training1 = fopen(trainingDataPath, "w");
+	char trainsetPath[100];
+	strcat(strcat(strcat(strcat(trainsetPath, TRAINSETPATH), fileName), ID), ".data");
+	//printf("%s\n", trainsetPath);
+	training1 = fopen(trainsetPath, "w");
 
-	char trainingArffPath[100];
-	strcat(strcat(strcat(trainingArffPath, TRAINSETPATH), datasetName), ".arff");
-	training2 = fopen(trainingArffPath, "w");
+	char trainsetArffPath[100];
+	strcat(strcat(strcat(strcat(trainsetArffPath, TRAINSETPATH), fileName), ID), ".arff");
+	training2 = fopen(trainsetArffPath, "w");
 
-	char testingDataPath[100];
-	strcat(strcat(strcat(testingDataPath, TESTSETPATH), datasetName), ".data");
-	testing1 = fopen(testingDataPath, "w");
+	char testsetPath[100];
+	strcat(strcat(strcat(strcat(testsetPath, TESTSETPATH), fileName), ID), ".data");
+	testing1 = fopen(testsetPath, "w");
 
-	char testingArffPath[100];
-	strcat(strcat(strcat(testingArffPath, TESTSETPATH), datasetName), ".arff");
-	testing2 = fopen(testingArffPath, "w");
+	char testsetArffPath[100];
+	strcat(strcat(strcat(strcat(testsetArffPath, TESTSETPATH), fileName), ID), ".arff");
+	testing2 = fopen(testsetArffPath, "w");
 
 	// add header in arff files
 	fprintf(training2, headerText);
@@ -168,8 +175,8 @@ void split(char *fileName, int instances, int percentage, int classes, int attri
 			// shuffle the indices
 			for(j = 0; j < count[i]; j++)
 			{
-				k = rand() % count[i];
-				m = rand() % count[i];
+				k = (rand() - id - nthread) % count[i];
+				m = (rand() - id - nthread) % count[i];
 				if(k != m)
 				{
 					t = indices[k];
@@ -244,5 +251,4 @@ void split(char *fileName, int instances, int percentage, int classes, int attri
 		remove(temp);
 	}
 
-	return 0;
 }

@@ -1,13 +1,20 @@
 #include "InterfaceWriter.h"
+#include "errno.h"
 
 void iwrite(PrismRule_t *rule, char *fileName, int attributeSize)
 {
-    FILE *file = fopen(fileName, "w");
+    FILE *file = fopen(fileName, "wb");
+    printf("opening %s\n", fileName);
     if (file == NULL)
     {
-        printf("File not Found\n");
-        exit(EXIT_FAILURE);
+	perror("Error");
+	printf("Error No : %d %d\n", errno, ENOENT);
+        printf("Interface Writer => File not Found. %s\n", fileName);
+	printf("failed %s\n", fileName);
+        //exit(EXIT_FAILURE);
+        return ;
     }
+    printf("opened %s\n", fileName);
 
     PrismRule_t *currentPrismRule = rule;
     while(currentPrismRule != NULL)
@@ -24,7 +31,7 @@ void iwrite(PrismRule_t *rule, char *fileName, int attributeSize)
         {
             if(interfaceWriter[attributeIndex].value == NULL)
             {
-                fprintf(file, "%s,", "N/A");
+                fprintf(file, "%s,", "*");
             }
             else
             {

@@ -1,8 +1,8 @@
 #ifndef ACCURACY_H_INCLUDED
 #define ACCURACY_H_INCLUDED
 
-#define MAX_CHARS 120
-#define MAX_ATTRIBUTE_LEN 20
+#define MAX_CHARS 520
+#define MAX_ATTRIBUTE_LEN 120
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
