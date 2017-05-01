@@ -53,7 +53,7 @@ Accuracy_t getAccuracy(char *rulesFileName, char *testFileName, int tokens)
 
 int matches(char rulesLine[], char testLine[], int tokens)
 {
-	printf("\n");
+//	printf("\n");
 //	printf("matching\n");
     char rulesTokens[tokens][MAX_ATTRIBUTE_LEN];
     tokenizei(rulesLine, rulesTokens);
@@ -103,5 +103,6 @@ void printAccuracy(Accuracy_t accuracy)
     printf("\n\nACCURACY\n\n");
     printf("Hits : %d\n", accuracy.hits);
     printf("Misses : %d\n",accuracy.misses);
+    printf("ID : %d\n", accuracy.id);
     printf("Hit Percentage: %lf%\n", (100.0*accuracy.hits)/(accuracy.hits + accuracy.misses));
 }

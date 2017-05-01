@@ -10,6 +10,7 @@ typedef struct Accuracy
 {
     int hits;
     int misses;
+    int id;
 }Accuracy_t;
 
 Accuracy_t getAccuracy(char *rulesFileName, char *testFileName, int tokenSize);

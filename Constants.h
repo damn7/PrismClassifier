@@ -1,6 +1,7 @@
 #ifndef CONSTANTS_H_INCLUDED
 #define CONSTANTS_H_INCLUDED
 
+#define PROCESSORS 3
 #define DATASETPATH "./datasets/"
 #define TESTSETPATH "./testsets/"
 #define TRAINSETPATH "./trainsets/"
